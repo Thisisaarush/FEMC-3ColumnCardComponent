@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+$card1-background-color: hsl(31, 77%, 52%);
+$card2-background-color: hsl(184, 100%, 22%);
+$card3-background-color: hsl(179, 100%, 13%);
+
+$primary-color: hsl(0, 0%, 95%);
+$secondary-color: hsla(0, 0%, 100%, 0.75);
+
+$font-size: 15px;
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .sedan, .suv, .luxury {
+    padding: 50px;
+  }
+
+  .sedan {
+    background-color: $card1-background-color;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .suv {
+    background-color: $card2-background-color;
+  }
+
+  .luxury {
+    background-color: $card3-background-color;
+    border-radius: 0 10px 10px 0;
+  }
+
+  img {
+    margin-bottom: 1.5em;
+  }
+
+  h1 {
+    font-family: 'Big Shoulders Display', sans-serif;
+    text-transform: uppercase;
+    color: $primary-color;
+    margin-bottom: 1em;
+  }
+  p {
+    font-family: 'Lexend Deca', sans-serif;
+    color: $secondary-color;
+    font-size: $font-size;
+    margin-bottom: 5em;
+  }
+  span {
+    background-color: $primary-color;
+    padding: 1em 2em;
+    border-radius: 34px;
+    font-family: 'Lexend Deca',sans-serif;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $primary-color;
+    }
+
+    &.button-sedan {
+      color: $card1-background-color;
+    }
+    &.button-suv {
+      color: $card2-background-color;
+    }
+    &.button-luxury {
+      color: $card3-background-color;
+    }
+
+    &.button-sedan:hover, &.button-suv:hover, &.button-luxury:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+
+@media screen and (max-width: 376px) {
+  .card-container {
+    width: 90%;
+    height: auto;
+    margin-top: 32em;
+    flex-direction: column;
+
+    .sedan {
+      border-radius: 10px 10px 0 0;
+    }
+    .luxury {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+}
